@@ -76,23 +76,34 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Re:vive — Last updated: February 20, 2026</p>
+<p class="subtitle">Re:vive — Last updated: August 19, 2026</p>
 
 <div class="highlight">
-    <p><strong>Our commitment is simple: your conversations stay on your device.</strong> Re:vive is built with a privacy-first architecture. All AI processing happens entirely on-device using Apple Intelligence. We never see, collect, or store your chat data on our servers.</p>
+    <p><strong>Our commitment: your conversations are stored only on your device.</strong> Re:vive is built with a local-first architecture — your imported chats, memories, and settings never leave your device for storage. AI replies can be generated in one of two ways: entirely on-device using Apple Intelligence, or — <strong>only with your explicit consent</strong> — through our Cloud AI service powered by Google Gemini. Cloud AI is optional, clearly disclosed before first use, and can be turned off at any time in Settings.</p>
 </div>
 
 <h2>1. Data That Stays on Your Device</h2>
-<p>Re:vive processes all data locally on your device. The following data is created and stored <strong>only on your device</strong> and is never transmitted to our servers:</p>
+<p>Re:vive stores all of your data locally on your device. The following data is created and stored <strong>only on your device</strong> and is never uploaded to or stored on our servers:</p>
 <ul>
     <li><strong>Imported chat histories</strong> — WhatsApp conversations you import are parsed and stored locally.</li>
-    <li><strong>AI-generated conversations</strong> — All responses are generated on-device using Apple Intelligence (Foundation Models). No data is sent to any cloud AI service.</li>
-    <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally.</li>
+    <li><strong>AI-generated conversations</strong> — Your chat history within Re:vive is stored locally.</li>
+    <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally. Embedding generation always happens on-device.</li>
     <li><strong>Style profiles and relationship data</strong> — Analysis of conversation patterns remains on your device.</li>
     <li><strong>User preferences and settings</strong> — Your name, preferences, and app settings are stored locally using standard iOS storage.</li>
 </ul>
 
-<h2>2. iCloud Backup</h2>
+<h2>2. Cloud AI (Optional, Consent-Based)</h2>
+<p>Re:vive can generate replies using <strong>Google Gemini</strong> through our secure relay server ("Cloud AI"). This mode is <strong>off until you explicitly agree</strong> to it in the app, and you can turn it off at any time in Settings → AI Engine. When Cloud AI is enabled:</p>
+<ul>
+    <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions. This is the minimum needed to generate a reply.</li>
+    <li><strong>What is never sent:</strong> your full imported chat archive, your contacts, photos, or anything from conversations you are not actively chatting in.</li>
+    <li><strong>How it is used:</strong> solely to generate the reply. Content is processed transiently and is <strong>not stored</strong> on our server. Our server logs contain only technical metadata (status codes, message counts) — never your message content.</li>
+    <li><strong>No AI training:</strong> requests are processed via Google's paid API tier, which per <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google's API terms</a> does not use your data to train AI models.</li>
+    <li><strong>Security:</strong> all data is transmitted over encrypted connections (TLS).</li>
+    <li><strong>If you decline or turn Cloud AI off,</strong> replies are generated entirely on-device using Apple Intelligence (on supported devices), and nothing is sent to any AI service.</li>
+</ul>
+
+<h2>3. iCloud Backup</h2>
 <p>If you have iCloud enabled on your device, Re:vive may back up your conversation data to your personal iCloud account. This is handled entirely by Apple's iCloud infrastructure.</p>
 <ul>
     <li>iCloud backups are encrypted and managed by Apple.</li>
@@ -101,7 +112,7 @@
 </ul>
 <p>For more information on how Apple handles iCloud data, please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
 
-<h2>3. Third-Party Advertising</h2>
+<h2>4. Third-Party Advertising</h2>
 <p>Re:vive displays ads to free-tier users through <strong>Google AdMob</strong>. In connection with serving ads, the following may apply:</p>
 <ul>
     <li>Google AdMob may collect device identifiers, IP address, and general usage data for ad personalization and analytics.</li>
@@ -110,32 +121,33 @@
     <li><strong>Premium subscribers do not see ads</strong>, and no ad-related data collection occurs for premium users.</li>
 </ul>
 
-<h2>4. Data We Do NOT Collect</h2>
-<p>To be clear, we do <strong>not</strong> collect, store, or have access to:</p>
+<h2>5. Data We Do NOT Collect</h2>
+<p>To be clear, we do <strong>not</strong> collect, store, or retain:</p>
 <ul>
     <li>Your imported WhatsApp conversations</li>
-    <li>Messages you send or receive within Re:vive</li>
+    <li>Messages you send or receive within Re:vive (when Cloud AI is enabled, message content is processed transiently to generate a reply and is never stored — see Section 2)</li>
     <li>Names, phone numbers, or contact information</li>
     <li>Photos, media, or attachments</li>
     <li>Your location data</li>
     <li>Any personal information beyond what is described above</li>
 </ul>
 
-<h2>5. On-Device AI Processing</h2>
-<p>Re:vive uses Apple Intelligence (on-device Foundation Models) to generate AI responses. This means:</p>
+<h2>6. On-Device AI Processing</h2>
+<p>When Cloud AI is off (the default until you consent), Re:vive uses Apple Intelligence (on-device Foundation Models) to generate AI responses. This means:</p>
 <ul>
     <li>All AI processing happens on your device — nothing is sent to external servers.</li>
     <li>No conversation data leaves your device for AI processing.</li>
     <li>Apple's on-device models run without an internet connection.</li>
 </ul>
+<p>On devices that support Apple Intelligence, on-device processing is also used as an automatic fallback whenever Cloud AI is unavailable (for example, offline).</p>
 
-<h2>6. Children's Privacy</h2>
+<h2>7. Children's Privacy</h2>
 <p>Re:vive is not intended for children under the age of 13. We do not knowingly collect any personal information from children.</p>
 
-<h2>7. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date. Continued use of Re:vive after changes constitutes acceptance of the updated policy.</p>
+<h2>8. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date. Material changes — such as the introduction of Cloud AI — are also disclosed in the app and require your consent before taking effect for your account. Continued use of Re:vive after changes constitutes acceptance of the updated policy.</p>
 
-<h2>8. Contact Us</h2>
+<h2>9. Contact Us</h2>
 <p>If you have any questions about this Privacy Policy, please contact us at:</p>
 <p><a href="mailto:fattaillabs.ceo@gmail.com">fattaillabs.ceo@gmail.com</a></p>
 
