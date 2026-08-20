@@ -95,8 +95,8 @@
 <h2>2. Cloud AI (Optional, Consent-Based)</h2>
 <p>Re:vive can generate replies using <strong>Google Gemini</strong> through our secure relay server ("Cloud AI"). This mode is <strong>off until you explicitly agree</strong> to it in the app, and you can turn it off at any time in Settings → AI Engine. When Cloud AI is enabled:</p>
 <ul>
-    <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions. This is the minimum needed to generate a reply.</li>
-    <li><strong>What is never sent:</strong> your full imported chat archive, your contacts, photos, or anything from conversations you are not actively chatting in.</li>
+    <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, photos you explicitly choose to share in a chat (resized on-device before sending), and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions. This is the minimum needed to generate a reply.</li>
+    <li><strong>What is never sent:</strong> your full imported chat archive, your contacts, your photo library (only individual photos you pick to share are sent), or anything from conversations you are not actively chatting in.</li>
     <li><strong>How it is used:</strong> solely to generate the reply. Content is processed transiently and is <strong>not stored</strong> on our server. Our server logs contain only technical metadata (status codes, message counts) — never your message content.</li>
     <li><strong>No AI training:</strong> requests are processed via Google's paid API tier, which per <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google's API terms</a> does not use your data to train AI models.</li>
     <li><strong>Security:</strong> all data is transmitted over encrypted connections (TLS).</li>
