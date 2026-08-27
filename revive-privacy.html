@@ -76,7 +76,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Re:vive — Last updated: August 21, 2026</p>
+<p class="subtitle">Re:vive — Last updated: August 27, 2026</p>
 
 <div class="highlight">
     <p><strong>Our commitment: your conversations are stored only on your device.</strong> Re:vive is built with a local-first architecture — your imported chats, memories, and settings never leave your device for storage. AI replies can be generated in one of two ways: entirely on-device using Apple Intelligence, or — <strong>only with your explicit consent</strong> — through our Cloud AI service powered by Google Gemini. Cloud AI is optional, clearly disclosed before first use, and can be turned off at any time in Settings.</p>
@@ -85,14 +85,23 @@
 <h2>1. Data That Stays on Your Device</h2>
 <p>Re:vive stores all of your data locally on your device. The following data is created and stored <strong>only on your device</strong> and is never uploaded to or stored on our servers:</p>
 <ul>
-    <li><strong>Imported chat histories</strong> — WhatsApp conversations you import are parsed and stored locally.</li>
+    <li><strong>Imported chat histories</strong> — conversations you bring in from WhatsApp, KakaoTalk, LINE, or a screen recording of iMessage/SMS are parsed and stored locally.</li>
     <li><strong>AI-generated conversations</strong> — Your chat history within Re:vive is stored locally.</li>
     <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally. Embedding generation always happens on-device.</li>
     <li><strong>Style profiles and relationship data</strong> — Analysis of conversation patterns remains on your device.</li>
     <li><strong>User preferences and settings</strong> — Your name, preferences, and app settings are stored locally using standard iOS storage.</li>
 </ul>
 
-<h2>2. Cloud AI (Optional, Consent-Based)</h2>
+<h2>2. Bringing In Your Conversations</h2>
+<p>Re:vive can bring in a conversation in two ways. Either way, what you hand over is read <strong>on your device</strong> and is never uploaded to us.</p>
+<ul>
+    <li><strong>Exported chat files</strong> — a .txt or .zip export from WhatsApp, KakaoTalk, or LINE. You can pick the file inside Re:vive, or send it to Re:vive from another app's share sheet.</li>
+    <li><strong>Screen recordings</strong> — Apple does not let apps export iMessage or SMS history, so for those you record your Messages screen and hand Re:vive the video. Re:vive reads the text off the video frames on your device using Apple's built-in text recognition. <strong>The video itself is never uploaded anywhere.</strong> Re:vive keeps only the text it read — its copy of the video is deleted as soon as reading finishes, and a copy left behind by an interrupted import is cleared the next time you open the app.</li>
+    <li><strong>Your photo library</strong> — when you pick a recording, iOS shows its own picker and hands Re:vive only the one item you chose. Re:vive cannot browse or see the rest of your library.</li>
+    <li><strong>Text read from a recording is treated exactly like any other imported chat</strong> — stored on your device, and, if you have turned Cloud AI on, small relevant excerpts may be sent to generate a reply (see Section 3).</li>
+</ul>
+
+<h2>3. Cloud AI (Optional, Consent-Based)</h2>
 <p>Re:vive can generate replies using <strong>Google Gemini</strong> through our secure relay server ("Cloud AI"). This mode is <strong>off until you explicitly agree</strong> to it in the app, and you can turn it off at any time in Settings → AI Engine. When Cloud AI is enabled:</p>
 <ul>
     <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, photos you explicitly choose to share in a chat (resized on-device before sending), and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions. This is the minimum needed to generate a reply.</li>
@@ -103,7 +112,7 @@
     <li><strong>If you decline or turn Cloud AI off,</strong> replies are generated entirely on-device using Apple Intelligence (on supported devices), and nothing is sent to any AI service.</li>
 </ul>
 
-<h2>3. iCloud Backup</h2>
+<h2>4. iCloud Backup</h2>
 <p>If you have iCloud enabled on your device, Re:vive may back up your conversation data to your personal iCloud account. This is handled entirely by Apple's iCloud infrastructure.</p>
 <ul>
     <li>iCloud backups are encrypted and managed by Apple.</li>
@@ -112,7 +121,7 @@
 </ul>
 <p>For more information on how Apple handles iCloud data, please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
 
-<h2>4. Third-Party Advertising</h2>
+<h2>5. Third-Party Advertising</h2>
 <p>Re:vive displays ads to free-tier users through <strong>Google AdMob</strong>. In connection with serving ads, the following may apply:</p>
 <ul>
     <li>Google AdMob may collect device identifiers, IP address, and general usage data for ad personalization and analytics.</li>
@@ -121,7 +130,7 @@
     <li><strong>Premium subscribers do not see ads</strong>, and no ad-related data collection occurs for premium users.</li>
 </ul>
 
-<h2>5. Subscriptions &amp; Purchases</h2>
+<h2>6. Subscriptions &amp; Purchases</h2>
 <p>Premium subscriptions and purchases are processed by <strong>Apple</strong> and managed with <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a>, a subscription management service. We never see or handle your payment details — those stay with Apple.</p>
 <ul>
     <li>RevenueCat receives your purchase and subscription status (for example, which plan is active and when it renews) along with a randomly generated app user ID and basic device information.</li>
@@ -130,11 +139,12 @@
     <li>Apple may send subscription events (renewals, cancellations, refunds) to RevenueCat on our behalf so your access stays correct even when the app is closed.</li>
 </ul>
 
-<h2>6. Data We Do NOT Collect</h2>
+<h2>7. Data We Do NOT Collect</h2>
 <p>To be clear, we do <strong>not</strong> collect, store, or retain:</p>
 <ul>
-    <li>Your imported WhatsApp conversations</li>
-    <li>Messages you send or receive within Re:vive (when Cloud AI is enabled, message content is processed transiently to generate a reply and is never stored — see Section 2)</li>
+    <li>Your imported conversations, whatever app they came from</li>
+    <li>The screen recordings you import — the video never leaves your device, and Re:vive's copy is deleted after it is read</li>
+    <li>Messages you send or receive within Re:vive (when Cloud AI is enabled, message content is processed transiently to generate a reply and is never stored — see Section 3)</li>
     <li>Names, phone numbers, or contact information</li>
     <li>Photos, media, or attachments</li>
     <li>Your location data</li>
@@ -142,7 +152,7 @@
     <li>Any personal information beyond what is described above</li>
 </ul>
 
-<h2>7. On-Device AI Processing</h2>
+<h2>8. On-Device AI Processing</h2>
 <p>When Cloud AI is off (the default until you consent), Re:vive uses Apple Intelligence (on-device Foundation Models) to generate AI responses. This means:</p>
 <ul>
     <li>All AI processing happens on your device — nothing is sent to external servers.</li>
@@ -151,13 +161,13 @@
 </ul>
 <p>On devices that support Apple Intelligence, on-device processing is also used as an automatic fallback whenever Cloud AI is unavailable (for example, offline).</p>
 
-<h2>8. Children's Privacy</h2>
+<h2>9. Children's Privacy</h2>
 <p>Re:vive is not intended for children under the age of 13. We do not knowingly collect any personal information from children.</p>
 
-<h2>9. Changes to This Policy</h2>
+<h2>10. Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date. Material changes — such as the introduction of Cloud AI — are also disclosed in the app and require your consent before taking effect for your account. Continued use of Re:vive after changes constitutes acceptance of the updated policy.</p>
 
-<h2>10. Contact Us</h2>
+<h2>11. Contact Us</h2>
 <p>If you have any questions about this Privacy Policy, please contact us at:</p>
 <p><a href="mailto:fattaillabs.ceo@gmail.com">fattaillabs.ceo@gmail.com</a></p>
 
