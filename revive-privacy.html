@@ -76,43 +76,44 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Re:vive — Last updated: September 4, 2026</p>
+<p class="subtitle">Re:vive — Last updated: September 20, 2026</p>
 
 <div class="highlight">
-    <p><strong>Our commitment: your conversations are stored only on your device.</strong> Re:vive is built with a local-first architecture — your imported chats, memories, and settings never leave your device for storage. AI replies can be generated in one of two ways: entirely on-device using Apple Intelligence, or — <strong>only with your explicit consent</strong> — through our Cloud AI service powered by Google Gemini. Cloud AI is optional, clearly disclosed before first use, and can be turned off at any time in Settings.</p>
+    <p><strong>Our commitment: your conversations are stored only on your device.</strong> Re:vive is built with a local-first architecture — your imported chats, memories, and settings never leave your device for storage. AI replies can be generated in one of two ways: entirely on-device (Apple Intelligence on supported iPhones, Google's Gemini Nano on supported Android devices), or — <strong>only with your explicit consent</strong> — through our Cloud AI service powered by Google Gemini. Cloud AI is optional, clearly disclosed before first use, and can be turned off at any time in Settings.</p>
 </div>
 
 <h2>1. Data That Stays on Your Device</h2>
 <p>Re:vive stores all of your data locally on your device. The following data is created and stored <strong>only on your device</strong> and is never uploaded to or stored on our servers:</p>
 <ul>
-    <li><strong>Imported chat histories</strong> — conversations you bring in from WhatsApp, KakaoTalk, LINE, or a screen recording of iMessage/SMS are parsed and stored locally.</li>
+    <li><strong>Imported chat histories</strong> — conversations you bring in from WhatsApp, KakaoTalk, LINE, or (on iPhone) a screen recording of iMessage/SMS are parsed and stored locally.</li>
     <li><strong>AI-generated conversations</strong> — Your chat history within Re:vive is stored locally.</li>
-    <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally. Embedding generation always happens on-device. For some languages, Apple's on-device language model used for this is downloaded from Apple the first time it is needed — only the model comes down, and none of your conversation goes up.</li>
+    <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally. Embedding generation always happens on-device. For some languages, Apple's on-device language model used for this is downloaded from Apple the first time it is needed — only the model comes down, and none of your conversation goes up. On Android, the optional language packs (small embedding models for Korean, Japanese, or English) are delivered through Google Play the same way: only the model comes down.</li>
     <li><strong>Style profiles and relationship data</strong> — Analysis of conversation patterns remains on your device.</li>
-    <li><strong>User preferences and settings</strong> — Your name, preferences, and app settings are stored locally using standard iOS storage.</li>
+    <li><strong>User preferences and settings</strong> — Your name, preferences, and app settings are stored locally using standard iOS or Android app storage.</li>
 </ul>
 
 <h2>2. Bringing In Your Conversations</h2>
 <p>Re:vive can bring in a conversation in two ways. Either way, what you hand over is read <strong>on your device</strong> and is never uploaded to us.</p>
 <ul>
     <li><strong>Exported chat files</strong> — a .txt or .zip export from WhatsApp, KakaoTalk, or LINE. You can pick the file inside Re:vive, or send it to Re:vive from another app's share sheet.</li>
-    <li><strong>Screen recordings</strong> — Apple does not let apps export iMessage or SMS history, so for those you record your Messages screen and hand Re:vive the video. Re:vive reads the text off the video frames on your device using Apple's built-in text recognition. <strong>The video itself is never uploaded anywhere.</strong> Re:vive keeps only the text it read — its copy of the video is deleted as soon as reading finishes, and a copy left behind by an interrupted import is cleared the next time you open the app.</li>
-    <li><strong>Your photo library</strong> — when you pick a recording, iOS shows its own picker and hands Re:vive only the one item you chose. Re:vive cannot browse or see the rest of your library.</li>
+    <li><strong>Screen recordings (iPhone only)</strong> — Apple does not let apps export iMessage or SMS history, so for those you record your Messages screen and hand Re:vive the video. Re:vive reads the text off the video frames on your device using Apple's built-in text recognition. <strong>The video itself is never uploaded anywhere.</strong> Re:vive keeps only the text it read — its copy of the video is deleted as soon as reading finishes, and a copy left behind by an interrupted import is cleared the next time you open the app.</li>
+    <li><strong>Your photo library</strong> — when you pick a recording or a photo, iOS or Android shows its own picker and hands Re:vive only the one item you chose. Re:vive cannot browse or see the rest of your library.</li>
+    <li><strong>On Android</strong>, Re:vive reads only the export file you pick or share to it. It does not read your SMS/MMS messages, contacts, call logs, or other apps' data, and it asks for no such permissions.</li>
     <li><strong>Text read from a recording is treated exactly like any other imported chat</strong> — stored on your device, and, if you have turned Cloud AI on, small relevant excerpts may be sent to generate a reply (see Section 3).</li>
 </ul>
 
 <h2>3. Cloud AI (Optional, Consent-Based)</h2>
 <p>Re:vive can generate replies using <strong>Google Gemini</strong> through our secure relay server ("Cloud AI"). This mode is <strong>off until you explicitly agree</strong> to it in the app, and you can turn it off at any time in Settings → AI Engine. When Cloud AI is enabled:</p>
 <ul>
-    <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, photos you explicitly choose to share in a chat (resized on-device before sending), and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions. This is the minimum needed to generate a reply.</li>
+    <li><strong>What is sent:</strong> the message you type, recent messages from your current Re:vive chat, photos you explicitly choose to share in a chat (resized on-device before sending), and small excerpts of your imported conversation that are relevant to the reply (selected on-device), together with persona style instructions, and a random per-install identifier used only to enforce usage limits and prevent abuse (it is not linked to your name or any account). This is the minimum needed to generate a reply.</li>
     <li><strong>What is never sent:</strong> your full imported chat archive, your contacts, your photo library (only individual photos you pick to share are sent), or anything from conversations you are not actively chatting in.</li>
     <li><strong>How it is used:</strong> solely to generate the reply. Content is processed transiently and is <strong>not stored</strong> on our server. Our server logs contain only technical metadata (status codes, message counts) — never your message content.</li>
     <li><strong>No AI training:</strong> requests are processed via Google's paid API tier, which per <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google's API terms</a> does not use your data to train AI models.</li>
     <li><strong>Security:</strong> all data is transmitted over encrypted connections (TLS).</li>
-    <li><strong>If you decline or turn Cloud AI off,</strong> replies are generated entirely on-device using Apple Intelligence (on supported devices), and nothing is sent to any AI service.</li>
+    <li><strong>If you decline or turn Cloud AI off,</strong> replies are generated entirely on-device using Apple Intelligence (supported iPhones) or Gemini Nano (supported Android devices), and nothing is sent to any AI service.</li>
 </ul>
 
-<h2>4. iCloud Backup</h2>
+<h2>4. Device Backup (iCloud / Google)</h2>
 <p>If you have iCloud enabled on your device, Re:vive may back up your conversation data to your personal iCloud account. This is handled entirely by Apple's iCloud infrastructure.</p>
 <ul>
     <li>iCloud backups are encrypted and managed by Apple.</li>
@@ -120,23 +121,25 @@
     <li>You can disable iCloud backup for Re:vive in your device's Settings.</li>
 </ul>
 <p>For more information on how Apple handles iCloud data, please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
+<p><strong>Android.</strong> If Google's automatic backup is enabled on your device, your imported conversations (message text and timestamps) and app settings may be included in your device backup to your Google account. Photos you attach in chats and the on-device memory index are excluded. Backups are encrypted and managed by Google; we do not have access to them. You can turn off backup for Re:vive in Android Settings → Google → Backup. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
 
 <h2>5. Third-Party Advertising</h2>
 <p>Re:vive displays ads to free-tier users through <strong>Google AdMob</strong>. In connection with serving ads, the following may apply:</p>
 <ul>
     <li>Google AdMob may collect device identifiers, IP address, and general usage data for ad personalization and analytics.</li>
     <li>Ad data collection is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-    <li>You can limit ad tracking through your device's Settings → Privacy & Security → Tracking.</li>
+    <li>You can limit ad tracking through your device's Settings → Privacy & Security → Tracking (iOS), or Settings → Privacy → Ads (Android), where you can also delete or reset your advertising ID. The Android app uses the advertising ID only for AdMob.</li>
+    <li><strong>Consent in the EEA, UK, and Switzerland (Android).</strong> Before any ad is requested, the app shows a consent form provided by Google's User Messaging Platform. You can consent, refuse, or manage options per purpose, and change your choice at any time in Settings → "Ad privacy options". If you do not consent, ads may still be shown but are not personalized.</li>
     <li><strong>Premium subscribers do not see ads</strong>, and no ad-related data collection occurs for premium users.</li>
 </ul>
 
 <h2>6. Subscriptions &amp; Purchases</h2>
-<p>Premium subscriptions and purchases are processed by <strong>Apple</strong> and managed with <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a>, a subscription management service. We never see or handle your payment details — those stay with Apple.</p>
+<p>Premium subscriptions and purchases are processed by <strong>Apple</strong> (iOS) or <strong>Google Play</strong> (Android) and managed with <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a>, a subscription management service. We never see or handle your payment details — those stay with Apple or Google.</p>
 <ul>
     <li>RevenueCat receives your purchase and subscription status (for example, which plan is active and when it renews) along with a randomly generated app user ID and basic device information.</li>
     <li>This ID is not linked to your name, email, or any contact information, and we do not use it to identify you personally.</li>
     <li>This is used only to unlock Premium features, restore your purchases on a new device, and keep your subscription status accurate.</li>
-    <li>Apple may send subscription events (renewals, cancellations, refunds) to RevenueCat on our behalf so your access stays correct even when the app is closed.</li>
+    <li>Apple or Google Play may send subscription events (renewals, cancellations, refunds) to RevenueCat on our behalf so your access stays correct even when the app is closed.</li>
 </ul>
 
 <h2>7. Data We Do NOT Collect</h2>
@@ -146,20 +149,22 @@
     <li>The screen recordings you import — the video never leaves your device, and Re:vive's copy is deleted after it is read</li>
     <li>Messages you send or receive within Re:vive (when Cloud AI is enabled, message content is processed transiently to generate a reply and is never stored — see Section 3)</li>
     <li>Names, phone numbers, or contact information</li>
+    <li>Your SMS/MMS messages, contacts, or call logs (Android)</li>
     <li>Photos, media, or attachments</li>
     <li>Your location data</li>
-    <li>Your payment details (card numbers, billing information) — these are handled entirely by Apple</li>
+    <li>Your payment details (card numbers, billing information) — these are handled entirely by Apple or Google Play</li>
     <li>Any personal information beyond what is described above</li>
 </ul>
 
 <h2>8. On-Device AI Processing</h2>
-<p>When Cloud AI is off (the default until you consent), Re:vive uses Apple Intelligence (on-device Foundation Models) to generate AI responses. This means:</p>
+<p>When Cloud AI is off (the default until you consent), Re:vive uses Apple Intelligence (on-device Foundation Models) on supported iPhones, or Google's Gemini Nano on supported Android devices, to generate AI responses. This means:</p>
 <ul>
     <li>All AI processing happens on your device — nothing is sent to external servers.</li>
     <li>No conversation data leaves your device for AI processing.</li>
-    <li>Apple's on-device models run without an internet connection.</li>
+    <li>Apple's and Google's on-device models run without an internet connection.</li>
 </ul>
 <p>On devices that support Apple Intelligence, on-device processing is also used as an automatic fallback whenever Cloud AI is unavailable (for example, offline).</p>
+<p><strong>Android.</strong> Gemini Nano is available only on devices Google supports, and the "On-device AI" option appears in Settings → AI Engine only on those devices. When Cloud AI is off, replies are generated on-device there. Turning the option on additionally lets the app fall back to on-device generation when Cloud AI cannot be reached. Gemini Nano handles text only; photos are never processed on-device.</p>
 
 <h2>9. Children's Privacy</h2>
 <p>Re:vive is not intended for children under the age of 13. We do not knowingly collect any personal information from children.</p>
@@ -178,14 +183,14 @@ little for us to hand over — but the rights below still apply to what we do ha
     Write to the address above and we will answer within one month.</li>
     <li><strong>Deleting your data yourself</strong> — because everything is local, deleting the app removes your
     imported chats, memories, and settings from your device. If iCloud backup is on, remove Re:vive's data in
-    your device's Settings → iCloud as well.</li>
+    your device's Settings → iCloud as well; on Android, delete the app's backup under Settings → Google → Backup.</li>
     <li><strong>Where data goes</strong> — when Cloud AI is on, the small excerpts described in Section 3 travel
     to our relay server hosted on Google Cloud in Seoul, South Korea, and from there to Google's Gemini API.
     These transfers outside the EEA and the UK rely on the European Commission's Standard Contractual Clauses
     that Google Cloud applies to its customers. Content is processed transiently and is not stored.</li>
     <li><strong>How long we keep things</strong> — we keep no conversation content at all. Server logs hold only
     technical metadata (status codes, message counts) and are kept no longer than our hosting provider's default log retention, currently 30 days. Purchase records held by
-    RevenueCat last as long as your subscription plus the period Apple and tax law require.</li>
+    RevenueCat last as long as your subscription plus the period Apple, Google, and tax law require.</li>
     <li><strong>Complaints</strong> — if you are in the EEA or the UK you may complain to your local data
     protection authority. We would rather hear from you first so we can put things right.</li>
 </ul>
