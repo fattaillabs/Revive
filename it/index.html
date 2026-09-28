@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Re:vive — Parla ancora con chi ti manca</title>
+<meta name="description" content="Re:vive legge una chat che esporti da WhatsApp, KakaoTalk o LINE e porta avanti la conversazione con il suo modo di scrivere e i ricordi che avete davvero condiviso. Le tue chat restano sul telefono.">
+<link rel="canonical" href="https://fattaillabs.com/Revive/it/">
+<link rel="alternate" hreflang="en" href="https://fattaillabs.com/Revive/">
+<link rel="alternate" hreflang="ko" href="https://fattaillabs.com/Revive/ko/">
+<link rel="alternate" hreflang="ja" href="https://fattaillabs.com/Revive/ja/">
+<link rel="alternate" hreflang="de" href="https://fattaillabs.com/Revive/de/">
+<link rel="alternate" hreflang="fr" href="https://fattaillabs.com/Revive/fr/">
+<link rel="alternate" hreflang="es" href="https://fattaillabs.com/Revive/es/">
+<link rel="alternate" hreflang="it" href="https://fattaillabs.com/Revive/it/">
+<link rel="alternate" hreflang="pt" href="https://fattaillabs.com/Revive/pt/">
+<link rel="alternate" hreflang="x-default" href="https://fattaillabs.com/Revive/">
+<meta name="theme-color" content="#0B0E28">
+<meta name="apple-itunes-app" content="app-id=6759059883">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Re:vive">
+<meta property="og:title" content="Re:vive — Parla ancora con chi ti manca">
+<meta property="og:description" content="Esporta una chat, condividila con Re:vive e saluta. Le risposte hanno le sue parole e nascono dai momenti che avete davvero condiviso.">
+<meta property="og:url" content="https://fattaillabs.com/Revive/it/">
+<meta property="og:image" content="https://fattaillabs.com/Revive/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Re:vive — Parla ancora con chi ti manca">
+<meta name="twitter:description" content="Esporta una chat, condividila con Re:vive e saluta. Le risposte hanno le sue parole e nascono dai momenti che avete davvero condiviso.">
+<meta name="twitter:image" content="https://fattaillabs.com/Revive/assets/og.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "name": "Re:vive",
+      "alternateName": "Re:vive – AI Memory Chat",
+      "operatingSystem": "iOS",
+      "applicationCategory": "EntertainmentApplication",
+      "description": "Un'app per iPhone che legge una chat esportata da WhatsApp, KakaoTalk o LINE e continua la conversazione nello stile dell'altra persona, con ricordi presi dalla cronologia reale. Le chat importate restano solo sul dispositivo.",
+      "url": "https://fattaillabs.com/Revive/it/",
+      "inLanguage": [
+        "en",
+        "ko",
+        "ja",
+        "de",
+        "fr",
+        "es",
+        "it",
+        "pt"
+      ],
+      "installUrl": [
+        "https://apps.apple.com/app/id6759059883"
+      ],
+      "image": "https://fattaillabs.com/Revive/assets/og.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://fattaillabs.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://fattaillabs.com/#org",
+      "name": "FatTail Labs",
+      "alternateName": "팻테일랩스",
+      "url": "https://fattaillabs.com/",
+      "logo": "https://fattaillabs.com/images/FatTailLabs_Logo.png"
+    }
+  ]
+}
+</script>
+<link rel="preload" as="image" href="../assets/kv-wide.webp" media="(min-aspect-ratio: 1/1) and (min-width: 961px)">
+<link rel="preload" as="image" href="../assets/kv-portrait-720.webp" media="(max-aspect-ratio: 1/1)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  /* 키 비주얼의 남색 밤 + 달빛 하나로 고정한 디자인 — 라이트 테마를 두지 않는다 */
+  :root {
+    color-scheme: dark;
+    --night: #0B0E28;
+    --deep: #121640;
+    --moon: #F3E4BF;
+    --lamp: #E6B36C;
+    --ink: #ECEAF6;
+    --muted: #A3A1C4;
+    --faint: #7C7AA3;
+    --mine: #DB34F2;
+    --mine2: #0091FF;
+    --theirs: #2A2C45;
+    --line: rgba(236, 234, 246, 0.12);
+    --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --chat: -apple-system, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--night); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--night); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  :lang(ko) body { word-break: keep-all; }
+  :lang(ja) body { line-break: strict; }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--moon); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1080px, 100%); margin-inline: auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)); }
+
+  /* 머리 */
+  .top { position: absolute; inset-inline: 0; top: 0; padding-top: env(safe-area-inset-top, 0px); z-index: 20; }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .top nav { display: flex; align-items: center; gap: 22px; font-size: 15px; color: var(--muted); }
+  .top nav a { text-decoration: none; }
+  .top nav a:hover { color: var(--ink); }
+  .top nav .lang { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; }
+
+  /* 무대: 첫 화면 + 스크롤 장면 */
+  .stage { position: relative; }
+  .frame { position: relative; overflow: hidden; }
+  .scene { position: relative; height: min(100svh, 980px); min-height: 620px; }
+  .scene picture, .scene img.kv { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 64% 46%; will-change: transform; display: block; }
+  .veil { position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(11,14,40,.92) 0%, rgba(11,14,40,.66) 32%, rgba(11,14,40,0) 56%),
+      linear-gradient(0deg, rgba(11,14,40,1) 0%, rgba(11,14,40,0) 30%); }
+  .dim { position: absolute; inset: 0; background: var(--night); opacity: 0; pointer-events: none; }
+
+  .hero { position: absolute; inset: 0; display: flex; align-items: flex-end; z-index: 5; }
+  .hero .wrap { width: min(1240px, 100%); padding-block: 0 clamp(48px, 9vh, 96px); }
+  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 5.4vw, 78px); line-height: 1.03; letter-spacing: -0.015em; margin: 0 0 20px; max-width: 16ch; text-wrap: balance; hyphens: manual; }
+  .hero h1 em { display: block; font-style: italic; color: var(--moon); }
+  .hero p { margin: 0 0 28px; max-width: 36ch; color: var(--muted); font-size: 18px; }
+  :lang(ko) .hero h1, :lang(ja) .hero h1 { font-size: clamp(38px, 5.4vw, 72px); line-height: 1.18; letter-spacing: -0.01em; max-width: 11em; }
+  /* 한글·가나에는 이탤릭이 없다(기울인 가짜 글꼴이 된다). 강조는 달빛 색만 */
+  :lang(ko) em, :lang(ja) em, :lang(ko) .hero h1 em, :lang(ja) .hero h1 em { font-style: normal; }
+  /* 제목·자막은 강조 구절을 한 덩어리로 — 일본어가 낱말 중간(手元/にある)에서 꺾이지 않게 */
+  :lang(ko) h2 em, :lang(ja) h2 em, :lang(ko) .caption em, :lang(ja) .caption em { display: inline-block; }
+  :lang(ja) h1, :lang(ja) h2, :lang(ja) .caption, :lang(ja) .hero p { word-break: auto-phrase; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; }
+  .btn.primary { background: linear-gradient(90deg, var(--mine), var(--mine2)); color: #fff; }
+  .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
+  .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
+
+  /* 내보낸 대화 줄 → 말풍선 */
+  .memory { position: relative; z-index: 6; }
+  .raw { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .raw li { font-family: var(--mono); font-size: 14px; color: rgba(236,234,246,.88); line-height: 1.5; text-shadow: 0 0 18px rgba(230,179,108,.35); }
+  .raw li b { color: var(--lamp); font-weight: 400; }
+  .caption { font-family: var(--serif); font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; max-width: 16ch; text-wrap: balance; margin: 0; }
+  :lang(ko) .caption, :lang(ja) .caption { max-width: 12em; line-height: 1.3; }
+  .caption em { color: var(--moon); }
+  .caption-sub { color: var(--muted); max-width: 36ch; margin: 12px 0 0; font-size: 16px; }
+
+  .thread { display: flex; flex-direction: column; gap: 6px; width: min(400px, 100%); font-family: var(--chat); font-size: 16px; }
+  .when { align-self: center; font-size: 12px; color: var(--faint); letter-spacing: .04em; text-transform: uppercase; margin: 10px 0 4px; font-family: var(--sans); }
+  .b { max-width: 80%; padding: 9px 14px; border-radius: 19px; line-height: 1.35; }
+  .b.them { align-self: flex-start; background: var(--theirs); color: var(--ink); border-bottom-left-radius: 6px; }
+  .b.me { align-self: flex-end; background: var(--mine); color: #fff; border-bottom-right-radius: 6px; }
+  .b.past { opacity: .55; }
+  .b.past.them { background: rgba(42, 44, 69, .8); }
+  /* 답장 자리를 처음부터 잡아 두고 입력 중 표시를 그 위에 겹친다 — 표시가 사라져도 대화가 튀지 않게 */
+  .slot { position: relative; display: flex; flex-direction: column; }
+  .slot .typing { position: absolute; left: 0; top: 0; }
+  .typing { align-self: flex-start; display: inline-flex; gap: 5px; padding: 13px 16px; border-radius: 19px; background: var(--theirs); }
+  .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: dot 1.2s infinite ease-in-out; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes dot { 0%, 60%, 100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+  .from { align-self: flex-start; font-family: var(--mono); font-size: 11px; color: var(--faint); margin: 2px 0 0 6px; }
+
+  /* 정지 배치(JS 없음·움직임 줄이기): 장면 아래로 차례대로 */
+  .memory .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); gap: 48px; align-items: center; padding-block: 72px; }
+  .memory .col-l { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .memory .caption-box { display: flex; flex-direction: column; gap: 28px; }
+  html:not(.cine) .typing { display: none; }
+
+  /* 영화 모드(JS 가 켬): 장면을 고정하고 스크롤로 진행 */
+  .cine .stage { height: 460svh; }
+  .cine .frame { position: sticky; top: 0; height: 100svh; }
+  .cine .scene { height: 100%; min-height: 0; }
+  .cine .memory { position: absolute; inset: 0; display: flex; align-items: center; pointer-events: none; }
+  .cine .memory .wrap { padding-block: 0; }
+  .cine .raw { position: absolute; inset: 0; display: block; }
+  .cine .raw li { position: absolute; max-width: min(46ch, calc(100vw - 48px)); will-change: transform, opacity; opacity: 0; }
+  .cine .col-l, .cine .memory .wrap { position: static; }
+  .cine .caption-box { display: block; position: relative; min-height: 9em; opacity: 0; }
+  .cine .caption-box > div { position: absolute; top: 0; left: 0; transition: opacity .5s ease, transform .5s ease; }
+  .cine .caption-box > div:not(.on) { opacity: 0; transform: translateY(10px); }
+  .cine .thread > * { will-change: transform, opacity; }
+  .cine .thread > [data-m], .cine .thread > [data-now], .cine .thread > [data-reply], .cine .slot > *, .cine .thread > .when { opacity: 0; }
+
+  /* 이어지는 섹션 */
+  section.band { padding-block: clamp(72px, 12vh, 140px); border-top: 1px solid var(--line); }
+  .eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--lamp); margin: 0 0 14px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 40px; max-width: 18ch; text-wrap: balance; }
+  :lang(ko) h2, :lang(ja) h2 { line-height: 1.25; max-width: 14em; }
+  h2 em { color: var(--moon); }
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; list-style: none; margin: 0; padding: 0; counter-reset: s; }
+  .steps li { counter-increment: s; display: flex; flex-direction: column; gap: 14px; }
+  .steps figure { margin: 0; aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; background: #000; max-width: 100%; }
+  .steps img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+  .steps h3 { margin: 0; font-size: 19px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; }
+  .steps h3::before { content: counter(s); font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400; color: var(--lamp); font-size: 22px; }
+  .steps p { margin: 0; color: var(--muted); font-size: 16px; }
+  .sources { margin: 36px 0 0; color: var(--muted); font-size: 15px; max-width: 72ch; }
+  .sources b { color: var(--ink); font-weight: 500; }
+
+  .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .note { padding: 26px 26px 28px; border: 1px solid var(--line); border-radius: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .note h3 { margin: 0; font-size: 18px; font-weight: 600; }
+  .note p { margin: 0; color: var(--muted); font-size: 16px; }
+  .note .tag { font-family: var(--mono); font-size: 12px; color: var(--lamp); letter-spacing: .04em; }
+  .policy { display: inline-block; margin-top: 24px; color: var(--muted); font-size: 15px; text-underline-offset: 3px; }
+  .policy:hover { color: var(--ink); }
+
+  .end { position: relative; overflow: hidden; }
+  .end .glow { position: absolute; width: 900px; height: 900px; left: 50%; bottom: -620px; transform: translateX(-50%); border-radius: 50%;
+    background: radial-gradient(circle, rgba(243,228,191,.5) 0%, rgba(230,179,108,.18) 28%, rgba(11,14,40,0) 62%); pointer-events: none; }
+  .end .wrap { position: relative; }
+  .end h2 { margin-bottom: 18px; }
+  .end p { color: var(--muted); max-width: 44ch; margin: 0 0 28px; }
+  .fine { color: var(--faint); font-size: 14px; margin-top: 18px; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px calc(40px + env(safe-area-inset-bottom, 0px)); color: var(--faint); font-size: 14px; }
+  footer .wrap { display: flex; flex-direction: column; gap: 14px; }
+  footer .row { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+  footer a { text-decoration: none; } footer a:hover { color: var(--ink); }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; padding: 0; list-style: none; }
+  .langs a[aria-current] { color: var(--ink); }
+
+  @media (max-width: 760px) {
+    .top nav a:not(.dl):not(.lang) { display: none; }
+    .veil { background: linear-gradient(0deg, rgba(11,14,40,1) 0%, rgba(11,14,40,.86) 36%, rgba(11,14,40,0) 68%); }
+    .memory .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .cine .memory { align-items: flex-start; padding-top: calc(env(safe-area-inset-top, 0px) + 11vh); }
+    .cine .caption-box { min-height: 4.6em; }
+    .caption { font-size: 25px; }
+    .caption-sub { display: none; }
+    .raw li { font-size: 11.5px; }
+    .thread { font-size: 15px; }
+    .steps { grid-template-columns: 1fr; }
+    .steps figure { aspect-ratio: 4 / 4.2; }
+    .split { grid-template-columns: 1fr; }
+  }
+  /* 세로 화면은 세로 그림 */
+  @media (max-aspect-ratio: 1/1) {
+    .scene img.kv { object-position: 58% 40%; transform-origin: 56% 44%; }
+  }
+  @media (max-height: 700px) and (max-width: 760px) {
+    .cine .thread { font-size: 14px; gap: 4px; }
+    .cine .b { padding: 7px 12px; }
+    .cine .caption { font-size: 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .typing i { animation: none; opacity: .7; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/icon-96.png" alt="" width="30" height="30">Re:vive</a>
+    <nav>
+      <a href="#how">Come funziona</a>
+      <a href="#privacy">Privacy</a>
+      <a class="dl" href="#download">Scarica</a>
+      <a class="lang" href="#langs" aria-label="Lingua">IT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="stage" id="stage">
+    <div class="frame">
+      <div class="scene">
+        <picture>
+          <source media="(max-aspect-ratio: 1/1)" srcset="../assets/kv-portrait-720.webp 720w, ../assets/kv-portrait.webp 1024w" sizes="100vw">
+          <img class="kv" src="../assets/kv-wide.webp" srcset="../assets/kv-wide-960.webp 960w, ../assets/kv-wide.webp 1672w" sizes="100vw" alt="Una donna al telefono in una cabina di vetro sul mare, di notte, sotto la luna piena" width="1672" height="941" fetchpriority="high">
+        </picture>
+        <div class="veil"></div>
+        <div class="dim"></div>
+        <div class="hero">
+          <div class="wrap">
+            <h1>Parla ancora, <em>con le sue parole.</em></h1>
+            <p>Re:vive legge una chat che esporti e porta avanti la conversazione come scriveva quella persona, con ciò che avete davvero condiviso.</p>
+            <div class="ctas">
+              <a class="btn primary" href="https://apps.apple.com/app/id6759059883">Scarica per iPhone</a>
+              <span class="btn ghost">Android <small>in arrivo</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory" aria-label="Come una chat esportata torna a essere una conversazione">
+        <div class="wrap">
+          <div class="col-l">
+            <div class="caption-box">
+              <div data-cap="0" class="on">
+                <p class="caption">Si parte da una chat <em>che hai già.</em></p>
+                <p class="caption-sub">Esportala da WhatsApp, KakaoTalk o LINE. Basta il testo.</p>
+              </div>
+              <div data-cap="1">
+                <p class="caption">Ogni riga <em>diventa un ricordo.</em></p>
+                <p class="caption-sub">Cosa ha detto, come l'ha detto e quando.</p>
+              </div>
+              <div data-cap="2">
+                <p class="caption">Tu chiedi, <em>e ti risponde.</em></p>
+                <p class="caption-sub">Re:vive trova il momento vero nella vostra cronologia e risponde con la sua voce.</p>
+              </div>
+            </div>
+            <ul class="raw" aria-label="Righe di una chat esportata">
+              <li data-i="0">02/03/24, 08:12 - <b>Mamma</b>: Buongiorno tesoro ☀️ hai dormito bene?</li>
+              <li data-i="1">09/03/24, 12:10 - <b>Mamma</b>: Il ragù deve sobbollire piano, almeno tre ore. Non avere fretta</li>
+              <li data-i="2">09/03/24, 12:11 - <b>Mamma</b>: E alla fine un goccio di latte. La nonna faceva sempre così</li>
+              <li data-i="3">23/03/24, 19:51 - <b>Mamma</b>: E non dirmi «tutto bene», te lo sento nella voce 😉</li>
+              <li data-i="4">30/03/24, 22:06 - <b>Mamma</b>: Ti voglio bene. Dormi bene 🌙</li>
+            </ul>
+          </div>
+
+          <div class="thread">
+            <span class="when">Marzo 2024</span>
+            <div class="b them past" data-m="0">Buongiorno tesoro ☀️ hai dormito bene?</div>
+            <div class="b them past" data-m="1">Il ragù deve sobbollire piano, almeno tre ore. Non avere fretta</div>
+            <div class="b them past" data-m="2">E alla fine un goccio di latte. La nonna faceva sempre così</div>
+            <div class="b them past" data-m="3">E non dirmi «tutto bene», te lo sento nella voce 😉</div>
+            <div class="b them past" data-m="4">Ti voglio bene. Dormi bene 🌙</div>
+            <span class="when" data-now>Oggi</span>
+            <div class="b me" data-now>qual era il segreto del tuo ragù?</div>
+            <div class="slot">
+              <div class="typing" data-typing aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="b them" data-reply>Piano piano, almeno tre ore 🍝 e alla fine un goccio di latte, come faceva la nonna</div>
+            </div>
+            <span class="from" data-reply>ricordo del 9 marzo 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <p class="eyebrow">Come funziona</p>
+      <h2>Tre passaggi. <em>Nessun account.</em></h2>
+      <ol class="steps">
+        <li>
+          <figure><img src="../assets/step-export.webp" alt="Il menu Esporta chat di WhatsApp con l&#x27;opzione senza media" loading="lazy" decoding="async" width="720" height="900"></figure>
+          <h3>Esporta la chat</h3>
+          <p>Su WhatsApp, KakaoTalk o LINE, esporta una chat singola. Senza media va benissimo.</p>
+        </li>
+        <li>
+          <figure><img src="../assets/step-share.webp" alt="Il menu di condivisione con Re:vive tra le app" loading="lazy" decoding="async" width="720" height="930"></figure>
+          <h3>Condividila con Re:vive</h3>
+          <p>Scegli Re:vive dal menu di condivisione e indica chi dei due sei tu.</p>
+        </li>
+        <li>
+          <figure><img src="../assets/step-chat-it.webp" alt="Una conversazione in Re:vive" loading="lazy" decoding="async" width="720" height="900"></figure>
+          <h3>Saluta</h3>
+          <p>Scrivi come hai sempre fatto. Frasi, ritmo ed emoji vengono dalla vostra cronologia.</p>
+        </li>
+      </ol>
+      <p class="sources">Legge le esportazioni di <b>WhatsApp</b>, <b>KakaoTalk</b> e <b>LINE</b> e, su iPhone, le registrazioni dello schermo di <b>iMessage</b>. Risponde in italiano, inglese, tedesco, francese, spagnolo, portoghese, coreano e giapponese.</p>
+    </div>
+  </section>
+
+  <section class="band" id="privacy">
+    <div class="wrap">
+      <p class="eyebrow">Privacy</p>
+      <h2>Le tue chat <em>restano sul telefono.</em></h2>
+      <div class="split">
+        <div class="note">
+          <span class="tag">SUL TUO TELEFONO</span>
+          <h3>Tutta la cronologia</h3>
+          <p>Chat importate, ricordi e impostazioni sono salvati solo sul tuo dispositivo. Non c'è nessun account da creare.</p>
+        </div>
+        <div class="note">
+          <span class="tag">SOLO CON L'IA AVANZATA</span>
+          <h3>Solo ciò che serve alla risposta</h3>
+          <p>L'IA avanzata resta spenta finché non acconsenti. Quando è attiva, il tuo messaggio e pochi estratti correlati vengono inviati per scrivere la risposta. Niente resta sul nostro server né viene usato per l'addestramento. Sui telefoni compatibili, l'IA sul dispositivo tiene tutto sul telefono.</p>
+        </div>
+      </div>
+      <a class="policy" href="https://fattaillabs.com/Revive/revive-privacy.html">Leggi l'informativa sulla privacy →</a>
+    </div>
+  </section>
+
+  <section class="band end" id="download">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2>Riprendi <em>da dove eravate rimasti.</em></h2>
+      <p>Gratis per iniziare, con 10 messaggi al giorno. Premium toglie il limite giornaliero e la pubblicità.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://apps.apple.com/app/id6759059883">Scarica per iPhone</a>
+        <span class="btn ghost">Google Play <small>in arrivo</small></span>
+      </div>
+      <p class="fine">Re:vive non sostituisce una persona. È un posto dove una conversazione può continuare.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="langs" id="langs" aria-label="Lingua">
+      <li><a href="../" hreflang="en" lang="en">English</a></li>
+      <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+      <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="../it/" hreflang="it" lang="it" aria-current="page">Italiano</a></li>
+      <li><a href="../pt/" hreflang="pt" lang="pt-BR">Português</a></li>
+    </ul>
+    <div class="row">
+      <span>© 2026 FatTail Labs</span>
+      <span><a href="https://fattaillabs.com/Revive/revive-privacy.html">Informativa sulla privacy</a> · <a href="https://fattaillabs.com/">FatTail Labs</a> · fattaillabs.ceo@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // 움직임을 줄이면 정지 배치 그대로(장면 아래로 대화가 차례로 놓인다)
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('cine');
+
+  const stage = document.getElementById('stage');
+  const frame = stage.querySelector('.frame');
+  const kv = stage.querySelector('.kv');
+  const dim = stage.querySelector('.dim');
+  const hero = stage.querySelector('.hero');
+  const raws = [...stage.querySelectorAll('.raw li')];
+  const past = [...stage.querySelectorAll('[data-m]')];
+  const whens = [...stage.querySelectorAll('.when')];
+  const nowEls = [...stage.querySelectorAll('[data-now]')];
+  const typing = stage.querySelector('[data-typing]');
+  const replies = [...stage.querySelectorAll('[data-reply]')];
+  const caps = [...stage.querySelectorAll('[data-cap]')];
+  const captionBox = stage.querySelector('.caption-box');
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const ease = t => 1 - Math.pow(1 - t, 3);
+
+  // 흩어진 자리(프레임 기준 비율) — 바다 위 불빛처럼
+  // 왼쪽 가운데(자막 자리)는 비워 둔다 — 독일어처럼 자막이 세 줄이 돼도 겹치지 않게
+  const spots = [[0.07, 0.14], [0.46, 0.26], [0.52, 0.50], [0.10, 0.76], [0.40, 0.88]];
+  let deltas = [];
+
+  function layout() {
+    const f = frame.getBoundingClientRect();
+    const narrow = innerWidth <= 760;
+    raws.forEach((li, i) => {
+      li.style.transform = 'none';
+      li.style.left = '0px';
+      const w = li.getBoundingClientRect().width;
+      const [x, y] = spots[i];
+      const left = narrow ? 18 + (i % 2) * 12 : Math.max(24, Math.min(f.width * x, f.width - w - 24));
+      li.style.left = left + 'px';
+      li.style.top = (f.height * (narrow ? 0.34 + i * 0.105 : y)) + 'px';
+    });
+    past.forEach(b => b.style.transform = 'none');
+    deltas = raws.map((li, i) => {
+      const a = li.getBoundingClientRect(), b = past[i].getBoundingClientRect();
+      return [b.left - a.left, b.top + b.height / 2 - (a.top + a.height / 2)];
+    });
+    render();
+  }
+
+  function render() {
+    const r = stage.getBoundingClientRect();
+    const p = clamp(-r.top / Math.max(1, r.height - innerHeight));
+
+    // 1) 부스 안으로 다가가며 첫 화면 글이 물러난다
+    const push = ease(seg(p, 0, 0.3));
+    kv.style.transform = `scale(${1 + push * 0.9})`;
+    kv.style.filter = push > 0.01 ? `blur(${(push * 3).toFixed(2)}px)` : '';
+    dim.style.opacity = (0.12 * seg(p, 0, 0.02) + push * 0.72).toFixed(3);
+    const out = seg(p, 0.02, 0.14);
+    hero.style.opacity = (1 - out).toFixed(3);
+    hero.style.transform = `translateY(${-out * 24}px)`;
+    hero.style.visibility = out >= 1 ? 'hidden' : '';
+
+    // 2) 내보낸 줄들이 떠오른다
+    captionBox.style.opacity = seg(p, 0.14, 0.2).toFixed(3);
+    raws.forEach((li, i) => {
+      const inT = ease(seg(p, 0.16 + i * 0.025, 0.26 + i * 0.025));
+      const drift = (1 - inT) * 24;
+      // 3) 줄이 말풍선 자리로 흘러가 말풍선이 된다
+      const m = ease(seg(p, 0.40 + i * 0.03, 0.52 + i * 0.03));
+      const [dx, dy] = deltas[i] || [0, 0];
+      li.style.transform = `translate(${dx * m}px, ${dy * m + drift}px) scale(${1 - m * 0.08})`;
+      li.style.opacity = (inT * (1 - m) * 0.95).toFixed(3);
+      past[i].style.opacity = (m * 0.55).toFixed(3);
+      past[i].style.transform = `translateY(${(1 - m) * 6}px)`;
+    });
+    whens[0].style.opacity = seg(p, 0.40, 0.46).toFixed(3);
+
+    // 4) 오늘의 질문 → 입력 중 → 그 사람의 답
+    const q = ease(seg(p, 0.64, 0.70));
+    nowEls.forEach(el => { el.style.opacity = q.toFixed(3); el.style.transform = `translateY(${(1 - q) * 14}px)`; });
+    typing.style.opacity = (seg(p, 0.72, 0.76) * (1 - seg(p, 0.82, 0.84))).toFixed(3);
+    const a = ease(seg(p, 0.84, 0.9));
+    replies.forEach(el => { el.style.opacity = a.toFixed(3); el.style.transform = `translateY(${(1 - a) * 12}px)`; });
+
+    const cap = p < 0.36 ? 0 : p < 0.62 ? 1 : 2;
+    caps.forEach((c, i) => c.classList.toggle('on', i === cap));
+  }
+
+  let ticking = false;
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; render(); }); } }, { passive: true });
+  let lastW = innerWidth;
+  // 폰 주소창이 접히며 생기는 높이 변화에는 다시 재지 않는다(폭이 바뀔 때만)
+  addEventListener('resize', () => { if (innerWidth !== lastW) { lastW = innerWidth; layout(); } else render(); });
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(layout);
+  layout();
+})();
+</script>
+</body>
+</html>
