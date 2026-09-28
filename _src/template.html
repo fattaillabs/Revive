@@ -47,7 +47,6 @@
     --muted: #A3A1C4;
     --faint: #7C7AA3;
     --mine: #DB34F2;
-    --mine2: #0091FF;
     --theirs: #2A2C45;
     --line: rgba(236, 234, 246, 0.12);
     --serif: {{FONT_SERIF}};
@@ -80,7 +79,7 @@
   .frame { position: relative; overflow: hidden; }
   .scene { position: relative; height: min(100svh, 980px); min-height: 620px; }
   .scene picture, .scene img.kv { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 64% 46%; will-change: transform; display: block; }
+  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 70% 42%; will-change: transform; display: block; }
   .veil { position: absolute; inset: 0; pointer-events: none;
     background:
       linear-gradient(90deg, rgba(11,14,40,.92) 0%, rgba(11,14,40,.66) 32%, rgba(11,14,40,0) 56%),
@@ -100,7 +99,9 @@
   :lang(ja) h1, :lang(ja) h2, :lang(ja) .caption, :lang(ja) .hero p { word-break: auto-phrase; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; }
-  .btn.primary { background: linear-gradient(90deg, var(--mine), var(--mine2)); color: #fff; }
+  /* 달빛 한 색 — 그라데이션 버튼은 흔한 AI 사이트 모양이라 쓰지 않는다 */
+  .btn.primary { background: var(--moon); color: var(--night); box-shadow: 0 0 0 1px rgba(243,228,191,.35), 0 8px 28px rgba(243,228,191,.12); transition: background .2s ease, box-shadow .2s ease; }
+  .btn.primary:hover { background: #FFF1CF; box-shadow: 0 0 0 1px rgba(243,228,191,.5), 0 10px 36px rgba(243,228,191,.22); }
   .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
   .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
 
@@ -206,7 +207,7 @@
   }
   /* 세로 화면은 세로 그림 */
   @media (max-aspect-ratio: 1/1) {
-    .scene img.kv { object-position: 58% 40%; transform-origin: 56% 44%; }
+    .scene img.kv { object-position: 42% 50%; transform-origin: 44% 36%; }
   }
   @media (max-height: 700px) and (max-width: 760px) {
     .cine .thread { font-size: 14px; gap: 4px; }
@@ -413,7 +414,7 @@
     const r = stage.getBoundingClientRect();
     const p = clamp(-r.top / Math.max(1, r.height - innerHeight));
 
-    // 1) 부스 안으로 다가가며 첫 화면 글이 물러난다
+    // 1) 창가의 그 사람에게 다가가며 첫 화면 글이 물러난다
     const push = ease(seg(p, 0, 0.3));
     kv.style.transform = `scale(${1 + push * 0.9})`;
     kv.style.filter = push > 0.01 ? `blur(${(push * 3).toFixed(2)}px)` : '';

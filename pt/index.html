@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Re:vive — Fale com quem faz falta</title>
-<meta name="description" content="O Re:vive lê uma conversa que você exporta do WhatsApp, KakaoTalk ou LINE e continua o papo do jeito que a pessoa escrevia, com as memórias que vocês realmente compartilharam. Suas conversas ficam no seu celular.">
+<meta name="description" content="O Re:vive lê uma conversa que você exporta do WhatsApp, KakaoTalk ou LINE e continua o papo do jeito que a pessoa escrevia, com as memórias que vocês realmente compartilharam. Seu histórico fica salvo só no seu celular.">
 <link rel="canonical" href="https://fattaillabs.com/Revive/pt/">
 <link rel="alternate" hreflang="en" href="https://fattaillabs.com/Revive/">
 <link rel="alternate" hreflang="ko" href="https://fattaillabs.com/Revive/ko/">
@@ -104,7 +104,6 @@
     --muted: #A3A1C4;
     --faint: #7C7AA3;
     --mine: #DB34F2;
-    --mine2: #0091FF;
     --theirs: #2A2C45;
     --line: rgba(236, 234, 246, 0.12);
     --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
@@ -137,7 +136,7 @@
   .frame { position: relative; overflow: hidden; }
   .scene { position: relative; height: min(100svh, 980px); min-height: 620px; }
   .scene picture, .scene img.kv { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 64% 46%; will-change: transform; display: block; }
+  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 70% 42%; will-change: transform; display: block; }
   .veil { position: absolute; inset: 0; pointer-events: none;
     background:
       linear-gradient(90deg, rgba(11,14,40,.92) 0%, rgba(11,14,40,.66) 32%, rgba(11,14,40,0) 56%),
@@ -157,7 +156,9 @@
   :lang(ja) h1, :lang(ja) h2, :lang(ja) .caption, :lang(ja) .hero p { word-break: auto-phrase; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; }
-  .btn.primary { background: linear-gradient(90deg, var(--mine), var(--mine2)); color: #fff; }
+  /* 달빛 한 색 — 그라데이션 버튼은 흔한 AI 사이트 모양이라 쓰지 않는다 */
+  .btn.primary { background: var(--moon); color: var(--night); box-shadow: 0 0 0 1px rgba(243,228,191,.35), 0 8px 28px rgba(243,228,191,.12); transition: background .2s ease, box-shadow .2s ease; }
+  .btn.primary:hover { background: #FFF1CF; box-shadow: 0 0 0 1px rgba(243,228,191,.5), 0 10px 36px rgba(243,228,191,.22); }
   .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
   .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
 
@@ -263,7 +264,7 @@
   }
   /* 세로 화면은 세로 그림 */
   @media (max-aspect-ratio: 1/1) {
-    .scene img.kv { object-position: 58% 40%; transform-origin: 56% 44%; }
+    .scene img.kv { object-position: 42% 50%; transform-origin: 44% 36%; }
   }
   @media (max-height: 700px) and (max-width: 760px) {
     .cine .thread { font-size: 14px; gap: 4px; }
@@ -292,7 +293,7 @@
       <div class="scene">
         <picture>
           <source media="(max-aspect-ratio: 1/1)" srcset="../assets/kv-portrait-720.webp 720w, ../assets/kv-portrait.webp 1024w" sizes="100vw">
-          <img class="kv" src="../assets/kv-wide.webp" srcset="../assets/kv-wide-960.webp 960w, ../assets/kv-wide.webp 1672w" sizes="100vw" alt="Uma mulher ao telefone numa cabine de vidro à beira-mar, à noite, sob a lua cheia" width="1672" height="941" fetchpriority="high">
+          <img class="kv" src="../assets/kv-wide.webp" srcset="../assets/kv-wide-960.webp 960w, ../assets/kv-wide.webp 1672w" sizes="100vw" alt="Uma mulher com o celular na mão junto à janela, à noite, com a lua cheia sobre o mar" width="1672" height="941" fetchpriority="high">
         </picture>
         <div class="veil"></div>
         <div class="dim"></div>
@@ -382,7 +383,7 @@
   <section class="band" id="privacy">
     <div class="wrap">
       <p class="eyebrow">Privacidade</p>
-      <h2>Suas conversas <em>ficam no seu celular.</em></h2>
+      <h2>Seu histórico <em>fica no seu celular.</em></h2>
       <div class="split">
         <div class="note">
           <span class="tag">NO SEU CELULAR</span>
@@ -390,9 +391,9 @@
           <p>Conversas importadas, memórias e ajustes ficam salvos só no seu aparelho. Não há conta para criar.</p>
         </div>
         <div class="note">
-          <span class="tag">SÓ COM A IA AVANÇADA</span>
+          <span class="tag">A CADA RESPOSTA</span>
           <h3>Só o que a resposta precisa</h3>
-          <p>A IA avançada fica desligada até você concordar. Ligada, ela envia sua mensagem e alguns trechos relacionados para escrever a resposta. Nada fica guardado no nosso servidor nem é usado para treinamento. Em celulares compatíveis, a IA no aparelho mantém tudo no celular.</p>
+          <p>As respostas são escritas pela IA avançada, que pede sua permissão na primeira mensagem. Cada resposta envia sua mensagem e alguns trechos relacionados, nunca o histórico inteiro. Nada fica guardado no nosso servidor nem é usado para treinamento. Em celulares compatíveis, você pode escolher a IA no aparelho e manter tudo no celular.</p>
         </div>
       </div>
       <a class="policy" href="https://fattaillabs.com/Revive/revive-privacy.html">Ler a política de privacidade →</a>
@@ -485,7 +486,7 @@
     const r = stage.getBoundingClientRect();
     const p = clamp(-r.top / Math.max(1, r.height - innerHeight));
 
-    // 1) 부스 안으로 다가가며 첫 화면 글이 물러난다
+    // 1) 창가의 그 사람에게 다가가며 첫 화면 글이 물러난다
     const push = ease(seg(p, 0, 0.3));
     kv.style.transform = `scale(${1 + push * 0.9})`;
     kv.style.filter = push > 0.01 ? `blur(${(push * 3).toFixed(2)}px)` : '';

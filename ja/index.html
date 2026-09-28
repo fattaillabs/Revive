@@ -104,7 +104,6 @@
     --muted: #A3A1C4;
     --faint: #7C7AA3;
     --mine: #DB34F2;
-    --mine2: #0091FF;
     --theirs: #2A2C45;
     --line: rgba(236, 234, 246, 0.12);
     --serif: "Newsreader", "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
@@ -137,7 +136,7 @@
   .frame { position: relative; overflow: hidden; }
   .scene { position: relative; height: min(100svh, 980px); min-height: 620px; }
   .scene picture, .scene img.kv { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 64% 46%; will-change: transform; display: block; }
+  .scene img.kv { object-fit: cover; object-position: 60% 50%; transform-origin: 70% 42%; will-change: transform; display: block; }
   .veil { position: absolute; inset: 0; pointer-events: none;
     background:
       linear-gradient(90deg, rgba(11,14,40,.92) 0%, rgba(11,14,40,.66) 32%, rgba(11,14,40,0) 56%),
@@ -157,7 +156,9 @@
   :lang(ja) h1, :lang(ja) h2, :lang(ja) .caption, :lang(ja) .hero p { word-break: auto-phrase; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; }
-  .btn.primary { background: linear-gradient(90deg, var(--mine), var(--mine2)); color: #fff; }
+  /* 달빛 한 색 — 그라데이션 버튼은 흔한 AI 사이트 모양이라 쓰지 않는다 */
+  .btn.primary { background: var(--moon); color: var(--night); box-shadow: 0 0 0 1px rgba(243,228,191,.35), 0 8px 28px rgba(243,228,191,.12); transition: background .2s ease, box-shadow .2s ease; }
+  .btn.primary:hover { background: #FFF1CF; box-shadow: 0 0 0 1px rgba(243,228,191,.5), 0 10px 36px rgba(243,228,191,.22); }
   .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
   .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
 
@@ -263,7 +264,7 @@
   }
   /* 세로 화면은 세로 그림 */
   @media (max-aspect-ratio: 1/1) {
-    .scene img.kv { object-position: 58% 40%; transform-origin: 56% 44%; }
+    .scene img.kv { object-position: 42% 50%; transform-origin: 44% 36%; }
   }
   @media (max-height: 700px) and (max-width: 760px) {
     .cine .thread { font-size: 14px; gap: 4px; }
@@ -292,7 +293,7 @@
       <div class="scene">
         <picture>
           <source media="(max-aspect-ratio: 1/1)" srcset="../assets/kv-portrait-720.webp 720w, ../assets/kv-portrait.webp 1024w" sizes="100vw">
-          <img class="kv" src="../assets/kv-wide.webp" srcset="../assets/kv-wide-960.webp 960w, ../assets/kv-wide.webp 1672w" sizes="100vw" alt="満月の夜、海辺のガラスの電話ボックスで電話をする人" width="1672" height="941" fetchpriority="high">
+          <img class="kv" src="../assets/kv-wide.webp" srcset="../assets/kv-wide-960.webp 960w, ../assets/kv-wide.webp 1672w" sizes="100vw" alt="満月の海が見える夜の窓辺で、スマホを手にたたずむ人" width="1672" height="941" fetchpriority="high">
         </picture>
         <div class="veil"></div>
         <div class="dim"></div>
@@ -382,7 +383,7 @@
   <section class="band" id="privacy">
     <div class="wrap">
       <p class="eyebrow">プライバシー</p>
-      <h2>トークは、<em>スマホの中だけに。</em></h2>
+      <h2>トーク履歴は、<em>スマホの中だけに。</em></h2>
       <div class="split">
         <div class="note">
           <span class="tag">スマホの中</span>
@@ -390,9 +391,9 @@
           <p>取り込んだトーク、思い出、設定はすべて端末内だけに保存されます。登録するアカウントもありません。</p>
         </div>
         <div class="note">
-          <span class="tag">高度なAIを使うときだけ</span>
+          <span class="tag">返事のたびに</span>
           <h3>返事に必要な分だけ</h3>
-          <p>高度なAIは同意するまでオフです。オンにすると、あなたのメッセージと関連するトーク数行だけを返事の作成に送ります。サーバーには残さず、AIの学習にも使いません。対応端末ではオンデバイスAIで、すべてをスマホの中で処理できます。</p>
+          <p>返事は高度なAIが書きます。最初のメッセージを送るときに同意をお願いしています。返事のたびに送るのは、あなたのメッセージと関連するトーク数行だけで、履歴全体は送りません。サーバーには残さず、AIの学習にも使いません。対応端末ではオンデバイスAIを選んで、すべてをスマホの中で処理することもできます。</p>
         </div>
       </div>
       <a class="policy" href="https://fattaillabs.com/Revive/revive-privacy.html">プライバシーポリシーを見る →</a>
@@ -485,7 +486,7 @@
     const r = stage.getBoundingClientRect();
     const p = clamp(-r.top / Math.max(1, r.height - innerHeight));
 
-    // 1) 부스 안으로 다가가며 첫 화면 글이 물러난다
+    // 1) 창가의 그 사람에게 다가가며 첫 화면 글이 물러난다
     const push = ease(seg(p, 0, 0.3));
     kv.style.transform = `scale(${1 + push * 0.9})`;
     kv.style.filter = push > 0.01 ? `blur(${(push * 3).toFixed(2)}px)` : '';

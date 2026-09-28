@@ -4,8 +4,9 @@
   python3 _src/make_assets.py
 
 원본:
-  키 비주얼(세로)  MissingYou/.../onboarding_hero.imageset/revive_keyconcept.png (앱 온보딩 그림)
-  키 비주얼(가로)  _src/kv-wide-source.png — 위 그림을 codex 이미지 편집으로 16:9 로 넓힌 것(2026-09-29)
+  키 비주얼(세로)  _src/kv-portrait-source.jpg — 앱 온보딩 그림에서 공중전화 부스·수화기·전화선을 걷어내고
+                   창가에서 폰을 든 장면으로 바꾼 것(2026-09-06 광고 A컷, 전화선 배선이 어색하다는 지적으로)
+  키 비주얼(가로)  _src/kv-wide-source.png — 위 세로 그림을 codex 이미지 편집으로 16:9 로 넓힌 것(2026-09-29)
   단계 그림        revive-promo/assets/revive-shot4*.png (내보내기·공유 시트)
                    revive-promo/screenshots/raw-<lang>/{import,chat}.png (앱 실화면, 언어별 촬영본)
   아이콘           ReviveAndroid/tools/store/play_icon_512.png
@@ -50,16 +51,15 @@ os.makedirs(OUT, exist_ok=True)
 wide = Image.open(os.path.join(HERE, "kv-wide-source.png")).convert("RGB")
 webp(wide, "kv-wide.webp", 82)
 webp(fit_w(wide, 960), "kv-wide-960.webp", 80)
-portrait = Image.open(src("MissingYou", "MissingYou", "Assets.xcassets", "onboarding_hero.imageset",
-                          "revive_keyconcept.png")).convert("RGB")
+portrait = Image.open(os.path.join(HERE, "kv-portrait-source.jpg")).convert("RGB")
 webp(fit_w(portrait, 1024), "kv-portrait.webp", 82)
 webp(fit_w(portrait, 720), "kv-portrait-720.webp", 80)
 
-# OG 1200x630 — 가로 그림에서 부스가 가운데 오게
+# OG 1200x630 — 가로 그림에서 인물과 달이 가운데 오게
 W, H = 1200, 630
 scale = H / wide.height * 1.08
 big = wide.resize((round(wide.width * scale), round(wide.height * scale)), Image.LANCZOS)
-cx = round(big.width * 0.58)
+cx = round(big.width * 0.66)
 x0 = max(0, min(big.width - W, cx - W // 2))
 y0 = round((big.height - H) * 0.45)
 og = big.crop((x0, y0, x0 + W, y0 + H))
