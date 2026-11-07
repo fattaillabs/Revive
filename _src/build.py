@@ -26,7 +26,7 @@ ROOT = os.path.dirname(HERE)
 BASE_URL = "https://fattaillabs.com/Revive/"
 APP_ID = "6759059883"
 APP_STORE = "https://apps.apple.com/app/id%s" % APP_ID
-PLAY_URL = None          # 구글 플레이 공개되면 "https://play.google.com/store/apps/details?id=com.fattail.revive"
+PLAY_URL = "https://play.google.com/store/apps/details?id=com.fattail.revive"   # 2026-11-07 프로덕션 출시
 PRIVACY_URL = BASE_URL + "revive-privacy.html"
 FREE_DAILY = 10          # MissingYou SubscriptionManager.freeDailyMessageLimit 와 같아야 한다
 LANG_ORDER = ["en", "ko", "ja", "de", "fr", "es", "it", "pt"]
@@ -61,7 +61,7 @@ def jsonld(lang, cfg, locales):
                 "@type": "MobileApplication",
                 "name": "Re:vive",
                 "alternateName": "Re:vive – AI Memory Chat",
-                "operatingSystem": "iOS",
+                "operatingSystem": "iOS, Android" if PLAY_URL else "iOS",
                 "applicationCategory": "EntertainmentApplication",
                 "description": cfg["ld_description"],
                 "url": page_url(cfg),
