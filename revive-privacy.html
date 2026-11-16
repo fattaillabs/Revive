@@ -76,7 +76,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Re:vive — Last updated: September 20, 2026</p>
+<p class="subtitle">Re:vive — Last updated: November 16, 2026</p>
 
 <div class="highlight">
     <p><strong>Our commitment: your conversations are stored only on your device.</strong> Re:vive is built with a local-first architecture — your imported chats, memories, and settings never leave your device for storage. AI replies can be generated in one of two ways: entirely on-device (Apple Intelligence on supported iPhones, Google's Gemini Nano on supported Android devices), or — <strong>only with your explicit consent</strong> — through our Cloud AI service powered by Google Gemini. Cloud AI is optional, clearly disclosed before first use, and can be turned off at any time in Settings.</p>
@@ -85,7 +85,7 @@
 <h2>1. Data That Stays on Your Device</h2>
 <p>Re:vive stores all of your data locally on your device. The following data is created and stored <strong>only on your device</strong> and is never uploaded to or stored on our servers:</p>
 <ul>
-    <li><strong>Imported chat histories</strong> — conversations you bring in from WhatsApp, KakaoTalk, LINE, or (on iPhone) a screen recording of iMessage/SMS are parsed and stored locally.</li>
+    <li><strong>Imported chat histories</strong> — conversations you bring in from WhatsApp, KakaoTalk, LINE, or a screen recording of a text-message conversation (iMessage/SMS) are parsed and stored locally.</li>
     <li><strong>AI-generated conversations</strong> — Your chat history within Re:vive is stored locally.</li>
     <li><strong>Conversation memory and embeddings</strong> — Vector databases used for memory recall are created and stored locally. Embedding generation always happens on-device. For some languages, Apple's on-device language model used for this is downloaded from Apple the first time it is needed — only the model comes down, and none of your conversation goes up. On Android, the optional language packs (small embedding models for Korean, Japanese, or English) are delivered through Google Play the same way: only the model comes down.</li>
     <li><strong>Style profiles and relationship data</strong> — Analysis of conversation patterns remains on your device.</li>
@@ -96,9 +96,10 @@
 <p>Re:vive can bring in a conversation in two ways. Either way, what you hand over is read <strong>on your device</strong> and is never uploaded to us.</p>
 <ul>
     <li><strong>Exported chat files</strong> — a .txt or .zip export from WhatsApp, KakaoTalk, or LINE. You can pick the file inside Re:vive, or send it to Re:vive from another app's share sheet.</li>
-    <li><strong>Screen recordings (iPhone only)</strong> — Apple does not let apps export iMessage or SMS history, so for those you record your Messages screen and hand Re:vive the video. Re:vive reads the text off the video frames on your device using Apple's built-in text recognition. <strong>The video itself is never uploaded anywhere.</strong> Re:vive keeps only the text it read — its copy of the video is deleted as soon as reading finishes, and a copy left behind by an interrupted import is cleared the next time you open the app.</li>
+    <li><strong>Screen recordings of text messages</strong> — phones offer no chat export for text messages (iMessage/SMS), and Re:vive does not ask for permission to read them. So for those you record your messaging app's screen while scrolling through the conversation and hand Re:vive the video. Re:vive reads the text off the video frames <strong>on your device</strong> — with Apple's built-in text recognition on iPhone, and with Google's on-device ML Kit text recognition on Android. <strong>The video itself is never uploaded anywhere.</strong> Re:vive keeps only the text it read. On iPhone, its copy of the video is deleted as soon as reading finishes, and a copy left behind by an interrupted import is cleared the next time you open the app. On Android, Re:vive reads the video you picked in place and makes no copy of it.</li>
+    <li><strong>Text recognition on Android</strong> — the ML Kit text-recognition component is delivered by Google Play services the first time it is needed; only the component comes down. Recognition runs entirely on your device. Google's ML Kit may send Google diagnostic and usage metrics about the component itself (such as device model, app version, performance and error codes) — never your video or the text read from it. See Google's <a href="https://developers.google.com/ml-kit/android-data-disclosure" target="_blank">ML Kit data disclosure</a>.</li>
     <li><strong>Your photo library</strong> — when you pick a recording or a photo, iOS or Android shows its own picker and hands Re:vive only the one item you chose. Re:vive cannot browse or see the rest of your library.</li>
-    <li><strong>On Android</strong>, Re:vive reads only the export file you pick or share to it. It does not read your SMS/MMS messages, contacts, call logs, or other apps' data, and it asks for no such permissions.</li>
+    <li><strong>On Android</strong>, Re:vive reads only the export file or screen recording you pick or share to it. It does not access your SMS/MMS messages directly, your contacts, call logs, or other apps' data, and it asks for no such permissions.</li>
     <li><strong>Text read from a recording is treated exactly like any other imported chat</strong> — stored on your device, and, if you have turned Cloud AI on, small relevant excerpts may be sent to generate a reply (see Section 3).</li>
 </ul>
 
