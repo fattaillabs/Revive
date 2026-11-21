@@ -162,6 +162,13 @@
   .btn.primary:hover { background: #FFF1CF; box-shadow: 0 0 0 1px rgba(243,228,191,.5), 0 10px 36px rgba(243,228,191,.22); }
   .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
   .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
+  /* 공식 스토어 배지(애플·구글 가이드: 원본 그대로, 같은 높이) */
+  .store-badge { display: inline-block; border-radius: 9px; transition: transform .2s ease, filter .2s ease; }
+  .store-badge img { display: block; height: 56px; width: auto; }
+  .store-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 8px 22px rgba(243,228,191,.16)); }
+  @media (max-width: 480px) { .ctas:has(.store-badge) { gap: 10px; } .store-badge img { height: 48px; } }
+  @media (max-width: 380px) { .store-badge img { height: 44px; } }
+  .end .ctas + .fine { margin-top: 22px; }
 
   /* 내보낸 대화 줄 → 말풍선 */
   .memory { position: relative; z-index: 6; }
@@ -303,8 +310,8 @@
             <h1>Fale de novo, <em>do jeitinho de sempre.</em></h1>
             <p>O Re:vive lê uma conversa que você exporta e continua o papo do jeito que a pessoa escrevia, com o que vocês realmente compartilharam.</p>
             <div class="ctas">
-              <a class="btn primary" href="https://apps.apple.com/app/id6759059883">Baixar para iPhone</a>
-              <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.fattail.revive">Google Play</a>
+              <a class="store-badge" href="https://apps.apple.com/app/id6759059883"><img src="../assets/badges/appstore-pt.svg" alt="Baixar na App Store" width="168" height="56"></a>
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fattail.revive"><img src="../assets/badges/googleplay-en.png" alt="Get it on Google Play" width="188" height="56"></a>
             </div>
           </div>
         </div>
@@ -407,8 +414,8 @@
       <h2>Continue <em>de onde parou.</em></h2>
       <p>Grátis para começar, com 10 mensagens por dia. O Premium remove o limite diário e os anúncios.</p>
       <div class="ctas">
-        <a class="btn primary" href="https://apps.apple.com/app/id6759059883">Baixar para iPhone</a>
-        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.fattail.revive">Google Play</a>
+        <a class="store-badge" href="https://apps.apple.com/app/id6759059883"><img src="../assets/badges/appstore-pt.svg" alt="Baixar na App Store" width="168" height="56"></a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fattail.revive"><img src="../assets/badges/googleplay-en.png" alt="Get it on Google Play" width="188" height="56"></a>
       </div>
       <p class="fine">O Re:vive não substitui ninguém. É um lugar para uma conversa continuar.</p>
     </div>

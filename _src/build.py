@@ -27,6 +27,11 @@ BASE_URL = "https://fattaillabs.com/Revive/"
 APP_ID = "6759059883"
 APP_STORE = "https://apps.apple.com/app/id%s" % APP_ID
 PLAY_URL = "https://play.google.com/store/apps/details?id=com.fattail.revive"   # 2026-11-07 프로덕션 출시
+# 공식 App Store 배지(애플 마케팅 자료 Black lockup, 언어별) — 높이 56px 기준 너비(viewBox 비율)
+IOS_BADGE_ALT = {"en": "Download on the App Store", "ko": "App Store에서 다운로드", "ja": "App Storeでダウンロード",
+                 "de": "Laden im App Store", "fr": "Télécharger dans l'App Store", "es": "Descargar en el App Store",
+                 "it": "Scarica su App Store", "pt": "Baixar na App Store"}
+IOS_BADGE_W = {"en": 168, "ko": 182, "ja": 152, "de": 168, "fr": 177, "es": 168, "it": 168, "pt": 168}
 PRIVACY_URL = BASE_URL + "revive-privacy.html"
 FREE_DAILY = 10          # MissingYou SubscriptionManager.freeDailyMessageLimit 와 같아야 한다
 LANG_ORDER = ["en", "ko", "ja", "de", "fr", "es", "it", "pt"]
@@ -105,8 +110,10 @@ def build(lang, cfg, locales, tpl):
             ' aria-current="page"' if l == lang else "", locales[l]["label"])
         for l in LANG_ORDER)
 
+    ios_badge = '<a class="store-badge" href="%s"><img src="%sassets/badges/appstore-%s.svg" alt="%s" width="%d" height="56"></a>' % (
+        APP_STORE, base, lang, attr(IOS_BADGE_ALT[lang]), IOS_BADGE_W[lang])
     if PLAY_URL:
-        android_hero = '<a class="btn ghost" href="%s">Google Play</a>' % PLAY_URL
+        android_hero = '<a class="store-badge" href="%s"><img src="%sassets/badges/googleplay-en.png" alt="Get it on Google Play" width="188" height="56"></a>' % (PLAY_URL, base)
         android_end = android_hero
     else:
         android_hero = '<span class="btn ghost">Android <small>%s</small></span>' % cfg["soon"]
@@ -116,7 +123,7 @@ def build(lang, cfg, locales, tpl):
     blocks = {
         "HREFLANG": hreflang, "OG_ALTERNATES": og_alt, "JSONLD": jsonld(lang, cfg, locales),
         "RAW_LINES": raw_lines, "PAST_BUBBLES": past, "LANG_LINKS": lang_links,
-        "ANDROID_HERO": android_hero, "ANDROID_END": android_end,
+        "ANDROID_HERO": android_hero, "ANDROID_END": android_end, "IOS_BADGE": ios_badge,
         "FONT_EXTRA": extra, "FONT_SERIF": serif, "FONT_SANS": sans,
         "APP_ID": APP_ID, "APP_STORE": APP_STORE, "PRIVACY_URL": PRIVACY_URL, "BASE_URL": BASE_URL,
         "LANG": lang, "LANG_CODE": lang.upper(), "base": base, "url": page_url(cfg),

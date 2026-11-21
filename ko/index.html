@@ -162,6 +162,13 @@
   .btn.primary:hover { background: #FFF1CF; box-shadow: 0 0 0 1px rgba(243,228,191,.5), 0 10px 36px rgba(243,228,191,.22); }
   .btn.ghost { border: 1px solid var(--line); color: var(--muted); }
   .btn small { font-weight: 500; opacity: .75; font-size: 14px; }
+  /* 공식 스토어 배지(애플·구글 가이드: 원본 그대로, 같은 높이) */
+  .store-badge { display: inline-block; border-radius: 9px; transition: transform .2s ease, filter .2s ease; }
+  .store-badge img { display: block; height: 56px; width: auto; }
+  .store-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 8px 22px rgba(243,228,191,.16)); }
+  @media (max-width: 480px) { .ctas:has(.store-badge) { gap: 10px; } .store-badge img { height: 48px; } }
+  @media (max-width: 380px) { .store-badge img { height: 44px; } }
+  .end .ctas + .fine { margin-top: 22px; }
 
   /* 내보낸 대화 줄 → 말풍선 */
   .memory { position: relative; z-index: 6; }
@@ -303,8 +310,8 @@
             <h1>그 사람의 말투로, <em>다시 이야기해요.</em></h1>
             <p>Re:vive는 내보낸 대화를 읽고, 그 사람이 쓰던 말투와 둘이 실제로 나눈 이야기로 대화를 이어가요.</p>
             <div class="ctas">
-              <a class="btn primary" href="https://apps.apple.com/app/id6759059883">iPhone에서 받기</a>
-              <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.fattail.revive">Google Play</a>
+              <a class="store-badge" href="https://apps.apple.com/app/id6759059883"><img src="../assets/badges/appstore-ko.svg" alt="App Store에서 다운로드" width="182" height="56"></a>
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fattail.revive"><img src="../assets/badges/googleplay-en.png" alt="Get it on Google Play" width="188" height="56"></a>
             </div>
           </div>
         </div>
@@ -407,8 +414,8 @@
       <h2>멈췄던 대화를, <em>그 자리에서.</em></h2>
       <p>하루 메시지 10개까지 무료예요. 프리미엄은 하루 제한과 광고가 없어요.</p>
       <div class="ctas">
-        <a class="btn primary" href="https://apps.apple.com/app/id6759059883">iPhone에서 받기</a>
-        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.fattail.revive">Google Play</a>
+        <a class="store-badge" href="https://apps.apple.com/app/id6759059883"><img src="../assets/badges/appstore-ko.svg" alt="App Store에서 다운로드" width="182" height="56"></a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fattail.revive"><img src="../assets/badges/googleplay-en.png" alt="Get it on Google Play" width="188" height="56"></a>
       </div>
       <p class="fine">Re:vive는 사람을 대신하지 않아요. 대화를 이어갈 수 있는 곳이에요.</p>
     </div>
