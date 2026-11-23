@@ -369,6 +369,31 @@
 </footer>
 
 <script>
+// 광고 유입 측정(11/23): 들어온 주소의 utm_* 를 이 탭 동안 기억했다가, 스토어 배지 링크에 붙인다.
+// App Store = 캠페인 링크(pt·ct) → App Store Connect › 분석 › 캠페인 에 설치가 따로 잡힌다.
+// Google Play = referrer 에 utm → Play Console 획득 보고서. 꼬리표 없이 온 방문은 링크를 건드리지 않는다.
+(() => {
+  const KEY = 'revive_campaign', PT = '128379849';
+  let p = {};
+  try { p = JSON.parse(sessionStorage.getItem(KEY) || '{}'); } catch (e) {}
+  const q = new URLSearchParams(location.search);
+  if ([...q.keys()].some(k => k.startsWith('utm_'))) {
+    p = {};
+    q.forEach((v, k) => { if (k.startsWith('utm_')) p[k] = v; });
+    try { sessionStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {}
+  }
+  if (!Object.keys(p).length) return;
+  const slug = v => { const o = (v || '').replace(/[^A-Za-z0-9._-]/g, '-').slice(0, 40); return /[A-Za-z0-9]/.test(o) ? o : ''; };
+  const ct = slug(p.utm_campaign) || slug(p.utm_source);
+  const ref = encodeURIComponent(Object.keys(p).map(k => k + '=' + p[k]).join('&'));
+  document.querySelectorAll('a.store-badge').forEach(a => {
+    const m = a.href.match(/apps\.apple\.com\/app\/id(\d+)/);
+    if (m && ct) a.href = 'https://apps.apple.com/app/apple-store/id' + m[1] + '?pt=' + PT + '&ct=' + encodeURIComponent(ct) + '&mt=8';
+    else if (/play\.google\.com\/store\/apps\/details/.test(a.href) && !/[?&]referrer=/.test(a.href)) a.href += '&referrer=' + ref;
+  });
+})();
+</script>
+<script>
 (() => {
   // 움직임을 줄이면 정지 배치 그대로(장면 아래로 대화가 차례로 놓인다)
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
